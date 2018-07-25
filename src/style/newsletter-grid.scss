@@ -1,7 +1,19 @@
 .newsletter-grid {
+    justify-content: center;
     grid-row: content-s/content-e;
 
     display: grid;
     grid-template-rows: [s box-s] 16rem [box-e archive-s] 1fr [archive-e e];
-    grid-template-columns: [box-s] 16rem [box-e newsletter-s] 1fr [newsletter-e];
+    grid-template-columns: [box-s archive-s] 16rem [box-e archive-e latest-s] 960px [latest-e];
+
+    grid-column-gap: 6.1rem;
+
+    &__button {
+        grid-row: add-s/add-e;
+        grid-column: latest-s/latest-e;
+        justify-self: end;
+        align-self: center;
+
+        margin-right: 1rem;
+    }
 }

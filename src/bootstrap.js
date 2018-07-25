@@ -20,6 +20,7 @@ import Signin from './components/auth/signin';
 import history from './history';
 import requireAuth from './components/requireAuth';
 import Dashboard from './component/dashboard';
+import NewNewsletter from './components/newsletter/newsletterNew';
 
 
 function main() {
@@ -32,6 +33,7 @@ function main() {
             <Route path='/signin' component={Signin}/>
             <Route path='/signup' component={Signup}/>
             <Route path='/dashboard' component={requireAuth(Dashboard)}/>
+            <Route path='/newsletter/new' component={requireAuth(NewNewsletter)}/>
           </Layout>
         </Switch>
       </Router>

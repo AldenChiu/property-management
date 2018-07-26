@@ -6,11 +6,39 @@
         width: 100%;
         margin-top: 6.6rem;
         grid-column: s/e;
+        grid-row: 1;
     }
 
-    &__email {
-        margin-top: 7.7rem;
+    &__newsletter-title,
+    &__body {
+        margin-top: 4.1rem;
         grid-column: input-s/input-e;
+    }
+
+    &__body {
+        grid-row: 3;
+        margin-top: 2rem;
+    }
+
+    &__submit,
+    &__cancel {
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        justify-self: end;
+        align-self: end;
+
+        margin-left: .2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    &__cancel {
+        transform: translateX(-15.5rem);
+    }
+
+    &__image {
+        grid-row: 3;
+        grid-column: s;
+        align-self: end;
     }
 
 }

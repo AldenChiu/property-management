@@ -3,15 +3,20 @@ import react, { Component } from 'react';
 import NewNewsletterForm from './newsletterNewForm';
 
 class NewNewsletter extends Component {
-    render() {
+    
+    onSubmit = (fields) => {
+        this.props.history.push('/dashboard');
+    }
+    
+    onCancel = () => {
+        this.props.history.push('/dashboard')
+    }
 
-        onSubmit = (fields) => {
-            
-        }
+    render() {
 
         return (
             <div className='new-newsletter'>
-                <NewNewsletterForm onSubmit={(event) => this.onSubmit(event)}/>
+                <NewNewsletterForm onCancel={() => this.onCancel()} onSubmit={(event) => this.onSubmit(event)}/>
             </div>
         )
     }

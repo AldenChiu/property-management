@@ -18,12 +18,10 @@
     }
 }
 
-.form-input {
+.form-input,
+.form-textarea {
     &__title {
-        color: $color-red-BA;
-        font-size: 1.8rem;
-        font-weight: 500;
-        line-height: 2.3rem;
+        @include red-title;
     }
 
     &__input {
@@ -34,6 +32,32 @@
         padding-left: 2rem;
         font-size: 1.6rem;
         font-weight: 500;
+    }
+}
+
+.form-textarea {
+    &__title {
+        align-self: start;
+    }
+    &__input {
+        height: 35.5rem;
+        resize: none;
+        padding-top: 1rem;
+    }
+}
+
+.form-button,
+.form-button-small,
+.form-image {
+    &__button,
+    &__replace {
+        transition: all .2s ease;
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            transform: scale(0.95) translateY(.205rem);
+        }
     }
 }
 
@@ -49,5 +73,67 @@
         font-weight: 500;
         line-height: 2.8rem;
         text-align: center;
+    }
+}
+
+.form-button-small {
+    &__button {
+        border-radius: 1.6rem;
+        border: 1px solid $color-gray-4D;
+        width: 7.4rem;
+        height: 2.4rem;
+        
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        text-align: center;
+        
+        width: 13rem;
+    }
+
+    &__danger {
+        border: 1px solid $color-red-BA;;
+        color: white;
+        background-color: $color-red-BA;
+    }
+}
+
+.form-image {
+    display: grid;
+    grid-template-rows: [title-s] 1fr [title-e image-s] 13.7rem [image-e];
+    grid-template-columns: [s] 16rem [e];
+
+    & > * {
+        grid-column: s/e;
+    }
+
+    &__title {
+        @include red-title;
+        margin-bottom: 2rem;
+    }
+
+    &__image {
+        width: 16rem;
+        height: 13.7rem;
+        border: none;
+        grid-row: image-s/image-e;
+        object-fit: cover;
+    }
+    &__replace {
+        border-radius: 1.6rem;
+        border: 1px solid white;
+        background-color: white;
+        width: 13rem;
+        height: 2.4rem;
+        
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        text-align: center;
+
+        color: $color-red-BA;
+        grid-row: image-s/image-e;
+
+        justify-self: center;
+
+
     }
 }

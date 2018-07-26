@@ -7,11 +7,11 @@ import Button from '../button';
 class NewsletterLatest extends Component {
 
     handleEdit = () => {
-        this.props.history.push('/newsletter/edit');
+        this.props.history.push(`/newsletter/edit/${this.props._id}`);
     }
 
     render() {
-        const { title, imageUrl, body } = this.props;
+        const { title, imageUrl, body, _id } = this.props;
         return (
             <div className='newsletter-latest'>
                 <h1 className='newsletter-latest__title'>{title}</h1>
